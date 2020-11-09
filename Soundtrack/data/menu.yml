@@ -1,9 +1,9 @@
 - item: Home
   url: "home"
-- item: Characters
-  url: "character"
-- item: Battles
-  url: "battle"
-- item: Houses
-  url: "house"
+- item: Albumnes
+  url: "albumnes"
+- item: Composers
+  url: "composers"
+- item: Movie
+  url: "movie"
 
