@@ -1,6 +1,6 @@
 - item: Home
   url: "home"
-- item: Albumnes
+- item: Albums
   url: "albumnes"
 - item: Composers
   url: "composers"
