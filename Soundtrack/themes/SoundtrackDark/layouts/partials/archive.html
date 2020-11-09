@@ -1,0 +1,48 @@
+{{- partial "intro" . }}
+{{- $filteredPosts := .Site.Params.blogDir }}
+{{- $pages := .Pages }}
+
+{{- if .IsHome }}
+  {{- $pages = .Site.RegularPages }}
+  {{- if $filteredPosts }}
+    {{- $pages = where $.Site.RegularPages "Section" $filteredPosts }}
+  {{- end }}
+{{- end }}
+{{- $flag := "false" }}
+
+
+{{- if eq .Params.title "Home"}}	
+		{{- partial "home" . }}	
+{{- else }}
+ 
+{{- if eq .Params.title "Character" }}
+<ul class='posts wrap' id = 'posts'> 
+  {{- range (.Paginate $pages).Pages }}
+	{{- partial "character" . }}
+  {{- end }}
+</ul>
+{{- end }}  
+{{- if eq .Params.title "Battle" }}  
+<ul class='posts wrap' id = 'posts'> 
+  {{- range (.Paginate $pages).Pages }}
+	{{- partial "battle" . }}
+  {{- end }}
+</ul>
+{{- end }}  
+{{- if eq .Params.title "House" }}  
+<ul class='posts wrap' id = 'posts'> 
+  {{- range (.Paginate $pages).Pages }}
+	{{- partial "house" . }}
+  {{- end }}
+</ul>  
+{{- end }}  
+{{- template "_internal/pagination.html" . }}
+{{- end }}
+
+
+
+
+
+
+
+ 

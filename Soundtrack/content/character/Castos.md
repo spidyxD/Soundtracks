@@ -1,0 +1,11 @@
+---
+characterId: Castos
+Title: Castos
+role: Archmaester
+culture: 
+dateOfBirth: 
+dateOfDeath: 
+house: 
+age: 
+image: character.jpg
+---

@@ -1,0 +1,16 @@
+<h3>More from Game of thrones</h3>
+<ul class='posts aside'>
+  {{- $kin := (where .Site.RegularPages ".Params.tags" "intersect" .Params.tags) }}
+  {{- $siblings := (where $kin ".Title" "!=" .Title) }}
+  {{- with $siblings }}
+    {{- range first 6 . }}
+      {{- partial "excerpt" . }}
+    {{- end }}
+  {{- else }}
+    {{- $kin := (where .Site.RegularPages "Section" .Section) }}
+    {{- $siblings := (where $kin ".Title" "!=" .Title) }}
+    {{- range first 2 $siblings }}
+      {{- partial "excerpt" . }}
+    {{- end }}
+  {{- end }}
+</ul>

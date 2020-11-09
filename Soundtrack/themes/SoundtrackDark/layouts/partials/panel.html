@@ -1,0 +1,48 @@
+
+{{- if eq .Params.title "Home"}}	
+		<h2> Website for learn about soundtracks. </h2>
+<div>
+	<img src = '{{ absURL "images/got.jpg" }}' alt = ''>
+</div>
+<div class = 'icon-bar w3-row-padding'style="padding:0;!important">
+	
+		{{- range .Site.Data.menu }}
+			{{- if eq .item "Home"}}
+				
+			{{- else }}
+				<div class="w3-third">
+				<a href = '{{ .url | absURL }}' class = 'nav_item'>{{ .item }}</a>
+				</div>			
+			{{- end }}
+		{{- end }}
+</div>
+<style>
+.icon-bar {
+  width: 100%;
+  background-color: #993737;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+{{- else }}
+<h1>{{.Params.title}}s list</h1>
+{{- end }}
+
+

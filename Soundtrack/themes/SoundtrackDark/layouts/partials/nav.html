@@ -1,0 +1,15 @@
+<div class = 'nav-drop'>
+  <div class = 'nav-body'>
+    {{- range .Site.Data.menu }}
+			{{- if eq .item "Home"}}
+				<a href = 'https://geekgot.netlify.app/' class = 'nav_item'>{{ .item }}</a>
+			{{- else }}
+				<a href = '{{ .url | absURL }}' class = 'nav_item'>{{ .item }}</a>
+			{{- end }}
+		{{- end }}
+    <div class = 'nav-close'></div>
+  </div>
+</div>
+{{- partial "header" . }}
+
+
