@@ -1,9 +1,9 @@
 - item: Home
   url: "home"
 - item: Albums
-  url: "albumnes"
-- item: Composers
-  url: "composers"
-- item: Movie
-  url: "movie"
+  url: "album"
+- item: Compositores
+  url: "compositor"
+- item: Peliculas
+  url: "pelicula"
 
