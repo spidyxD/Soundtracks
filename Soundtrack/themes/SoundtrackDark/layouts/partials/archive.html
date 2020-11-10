@@ -15,24 +15,24 @@
 		{{- partial "home" . }}	
 {{- else }}
  
-{{- if eq .Params.title "Character" }}
+{{- if eq .Params.title "Compositor" }}
 <ul class='posts wrap' id = 'posts'> 
   {{- range (.Paginate $pages).Pages }}
-	{{- partial "character" . }}
+	{{- partial "compositor" . }}
   {{- end }}
 </ul>
 {{- end }}  
-{{- if eq .Params.title "Battle" }}  
+{{- if eq .Params.title "Album" }}  
 <ul class='posts wrap' id = 'posts'> 
   {{- range (.Paginate $pages).Pages }}
-	{{- partial "battle" . }}
+	{{- partial "album" . }}
   {{- end }}
 </ul>
 {{- end }}  
-{{- if eq .Params.title "House" }}  
+{{- if eq .Params.title "Pelicula" }}  
 <ul class='posts wrap' id = 'posts'> 
   {{- range (.Paginate $pages).Pages }}
-	{{- partial "house" . }}
+	{{- partial "pelicula" . }}
   {{- end }}
 </ul>  
 {{- end }}  

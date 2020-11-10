@@ -8,7 +8,7 @@
 {{- $image := $scratch.Get "image" }}
 {{- $bg := (path.Join "images" $image | absLangURL) }}
 
-{{- if .Params.characterId }}
+{{- if .Params.albumId }}
 	<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
 		  <h1 class='post_title'>{{ .Title }}</h1>
 		</section>
@@ -38,7 +38,7 @@
 			{{- partial "aside" . }}
 		  </aside>
 		</div>
-{{- else if .Params.battleId }}
+{{- else if .Params.composerId }}
 		<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
 	  <h1 class='post_title'>{{ .Title }}</h1>
 	</section>
@@ -86,7 +86,7 @@
 		{{- partial "aside" . }}
 	  </aside>
 	</div>
-{{- else if .Params.houseId }}  
+{{- else if .Params.movieID }}  
 		<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
 	  <h1 class='post_title'>{{ .Title }}</h1>
 	</section>

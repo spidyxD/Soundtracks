@@ -1,0 +1,9 @@
+---
+albumId: 
+Title: 
+Artista: 
+FechaPublicacion: 
+Pelicula:
+Genero: 
+Calificacion: 
+---
