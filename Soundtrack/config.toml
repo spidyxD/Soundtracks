@@ -1,5 +1,5 @@
 baseURL = "https://geekSoundTrack.netlify.app"
 languageCode = "en-us"
-title = "Geek Soundtrack"
+title = "Movie Soundtracks"
 author = "Roger & Anthony"
 theme = "SoundtrackDark"
