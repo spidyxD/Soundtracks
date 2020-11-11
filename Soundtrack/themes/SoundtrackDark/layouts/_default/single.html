@@ -14,15 +14,16 @@
 		</section>
 		<div class = 'post'>
 		  <article class='post_content'>
-		  <p style="text-align: center;">This character has the role of {{ .Params.role }} and belongs to the house of <a href='{{ absURL "/home/" }}{{ trim .Params.house " " }}/'>{{ .Params.house }}.</a><br> 
+		  <p style="text-align: center;">
 		  <br>
-		  <br>
-			Other details about {{ .Title }}: 
+			Album details:
 				<ul>
-				<li>Date Of Birth: {{ .Params.dateOfBirth }} </li>
-				<li>Date of Death: {{- if .Params.DateoFdeath }} {{ .Params.DateoFdeath }} {{- else}} Still alive {{- end }}</li>
-				<li>Age: {{ .Params.age}}</li>
-				<li>Culture: {{ .Params.culture }}</li>
+				<li>Name: {{ .Title }} </li>
+				<li>Artista: {{ .Params.Artista }} </li>
+				<li>Fecha de publicacion: {{ .Params.FechaPublicacion }} </li>
+				<li>Pelicula: {{ .Params.Pelicula}}</li>
+				<li>Genero: {{ .Params.Genero }}</li>
+				<li>Calificacion: {{ .Params.Calificacion }}</li>
 				</ul>
 		  </p>
 			{{- .Content }}
@@ -43,36 +44,16 @@
 	  <h1 class='post_title'>{{ .Title }}</h1>
 	</section>
 	<div class = 'post'>
+	<article class='post_content'>
 	<p style="text-align: center;">
-	This battle is happened in {{ .Params.year }} and was located in {{ .Params.location }}.<br>
 	<br>
-	<br>
-	Other details about {{ .Title }} battle:
-					<table>	
-					<tr><td><b>Attacker king:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/character/" }}{{ lower .Params.attacker_kingID }}/'>{{ .Params.attacker_king }}</a></p>
-					</td></tr>
-					<tr><td><b>Defender king:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/character/" }}{{ lower .Params.defender_kingID }}/'>{{ .Params.defender_king }}</a></p>
-					</td></tr>
-					<tr><td><b>Attacker principal:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/house/" }}{{ lower .Params.attacker_principalID }}/'>{{ .Params.attacker_principal }}</a></p>
-					</td></tr>
-					<tr><td><b>Defender principal:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/house/" }}{{ lower .Params.defender_principalID }}/'>{{ .Params.defender_principal }}</a></p>
-					</td></tr>
-					<tr><td><b>Battle type:</b></td><td>
-					<p>{{ .Params.battle_type }}</p>
-					</td></tr>
-					<tr><td><b>Attacker commander:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/character/" }}{{ lower .Params.attacker_commanderID }}/'>{{ .Params.attacker_commander }}</a></p>
-					</td></tr>
-					<tr><td><b>Defender commander:</b></td><td>
-					<p style="color:blue;"><a href='{{ absURL "/character/" }}{{ lower .Params.defender_commanderID }}/'>{{ .Params.defender_commander }}</a></p>
-					</td></tr>
-					</table>
-	</p>		
-	  <article class='post_content'>
+		Compositor details:
+			<ul>
+			<li>Name: {{ .Title }} </li>
+			<li>Fecha de nacimiento: {{ .Params.Nacimiento }} </li>
+			<li>Anos de carrera: {{ .Params.AñosActivo }}</li>
+			</ul>
+	</p>
 		{{- .Content }}
 		<div class = 'post_extra'>
 		  {{- partial "copy" . }}
@@ -91,14 +72,19 @@
 	  <h1 class='post_title'>{{ .Title }}</h1>
 	</section>
 	<div class = 'post'>
-	<p style="text-align: center;">
-	The house of {{ .Title }} is located in {{ .Params.Region }}
-	<br>
-	<br>
-	<img src='{{ absURL "images/map.jpg" }}' alt="GOT map">
-	</p>
+	 <article class='post_content'>
+	 <p style="text-align: center;">
+		  <br>
+			Movie details:
+				<ul>
+				<li>Name: {{ .Title }} </li>
+				<li>Director: {{ .Params.Director }} </li>
+				<li>Fecha de estreno: {{ .Params.Estreno }} </li>
+				<li>Recaudacion: {{ .Params.Recaudacion }}</li>
+				</ul>
+		  </p>
 	
-	  <article class='post_content'>
+	 
 		{{- .Content }}
 		<div class = 'post_extra'>
 		  {{- partial "copy" . }}
