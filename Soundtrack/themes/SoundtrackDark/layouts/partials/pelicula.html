@@ -6,13 +6,12 @@
 {{- end }}
 {{- $image := $scratch.Get "image" }}
 {{- $bg := (path.Join "images" $image | absLangURL) }}
-
-{{- if .Params.battleId }}
+{{- if .Params.movieID }}
 <li class = 'post_item'>
     <a class = 'post_card' href='{{ .Permalink }}' title = '{{ .Title }}' style = 'background-image: url({{ $bg }});background-size: 90%;'>
 	</a>
-<div class = 'battle'>
-    <div class = 'battle_meta'>
+<div class = 'movie'>
+    <div class = 'movie_meta'>
     {{- with .Params.tags -}}
       {{- range first 1 . }}
       {{- $tag := . | urlize }}
