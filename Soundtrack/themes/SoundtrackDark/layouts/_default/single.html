@@ -19,9 +19,9 @@
 				Album details:
 					<ul>
 					<li>Name: {{ .Title }} </li>
-					<li>Artista: <a href='{{ absURL "/artista/" }}{{ lower .Params.composerId }}/'>{{ .Params.Artista }}</a> </li>
+					<li>Artista: <a href='{{ absURL "/artista/" }}{{ lower .Params.Artista }}/'>{{ .Params.Artista }}</a> </li>
 					<li>Fecha de publicacion: {{ .Params.FechaPublicacion }} </li>
-					<li>Pelicula: <a href='{{ absURL "/pelicula/" }}{{ lower .Params.movieID }}/'>{{ .Params.Pelicula }}</a></li>
+					<li>Pelicula: <a href='{{ absURL "/pelicula/" }}{{ lower .Params.Pelicula }}/'>{{ .Params.Pelicula }}</a></li>
 					<li>Genero: {{ .Params.Genero }}</li>
 					<li>Calificacion: {{ .Params.Calificacion }}</li>
 					</ul>
