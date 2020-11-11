@@ -13,25 +13,52 @@
 		  <h1 class='post_title'>{{ .Title }}</h1>
 		</section>
 		<div class = 'post'>
-		  <article class='post_content'>
-		  <p style="text-align: center;">
-		  <br>
-			Album details:
+			  <article class='post_content'>
+			  <p style="text-align: center;">
+			  <br>
+				Album details:
+					<ul>
+					<li>Name: {{ .Title }} </li>
+					<li>Artista: {{ .Params.Artista }} </li>
+					<li>Fecha de publicacion: {{ .Params.FechaPublicacion }} </li>
+					<li>Pelicula: {{ .Params.Pelicula}}</li>
+					<li>Genero: {{ .Params.Genero }}</li>
+					<li>Calificacion: {{ .Params.Calificacion }}</li>
+					</ul>
+			  </p>
+				{{- .Content }}			
+			  </article>
+			  <div class = 'post_extra'>
+				  {{- partial "copy" . }}
+			  </div>
+				{{- partial "author" . }}
+			  {{- if .Site.Params.Staticman }}
+				{{- partial "comments" . }}
+			  {{- end }}
+			  <aside>
+				{{- partial "aside" . }}
+			  </aside>
+		</div>
+{{- else if .Params.composerId }}
+	<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
+	<h1 class='post_title'>{{ .Title }}</h1>
+	</section>
+	<div class = 'post'>
+		<article class='post_content'>
+		<p style="text-align: center;">
+		<br>
+			Compositor details:
 				<ul>
 				<li>Name: {{ .Title }} </li>
-				<li>Artista: {{ .Params.Artista }} </li>
-				<li>Fecha de publicacion: {{ .Params.FechaPublicacion }} </li>
-				<li>Pelicula: {{ .Params.Pelicula}}</li>
-				<li>Genero: {{ .Params.Genero }}</li>
-				<li>Calificacion: {{ .Params.Calificacion }}</li>
+				<li>Fecha de nacimiento: {{ .Params.Nacimiento }} </li>
+				<li>Anos de carrera: {{ .Params.AñosActivo }}</li>
 				</ul>
-		  </p>
-			{{- .Content }}
-			
+		</p>
+			{{- .Content }}	
 		  </article>
 		  <div class = 'post_extra'>
 			  {{- partial "copy" . }}
-			</div>
+		  </div>
 			{{- partial "author" . }}
 		  {{- if .Site.Params.Staticman }}
 			{{- partial "comments" . }}
@@ -39,64 +66,35 @@
 		  <aside>
 			{{- partial "aside" . }}
 		  </aside>
-		</div>
-{{- else if .Params.composerId }}
-		<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
-	  <h1 class='post_title'>{{ .Title }}</h1>
-	</section>
-	<div class = 'post'>
-	<article class='post_content'>
-	<p style="text-align: center;">
-	<br>
-		Compositor details:
-			<ul>
-			<li>Name: {{ .Title }} </li>
-			<li>Fecha de nacimiento: {{ .Params.Nacimiento }} </li>
-			<li>Anos de carrera: {{ .Params.AñosActivo }}</li>
-			</ul>
-	</p>
-		{{- .Content }}	
-	  </article>
-	  <div class = 'post_extra'>
-		  {{- partial "copy" . }}
-		</div>
-		{{- partial "author" . }}
-	  {{- if .Site.Params.Staticman }}
-		{{- partial "comments" . }}
-	  {{- end }}
-	  <aside>
-		{{- partial "aside" . }}
-	  </aside>
 	</div>
 {{- else if .Params.movieID }}  
-		<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
+	<section class = 'post_header' style = 'background-image:url({{ $bg }});background-size: contain;'>
 	  <h1 class='post_title'>{{ .Title }}</h1>
 	</section>
 	<div class = 'post'>
-	 <article class='post_content'>
-	 <p style="text-align: center;">
-		  <br>
-			Movie details:
-				<ul>
-				<li>Name: {{ .Title }} </li>
-				<li>Director: {{ .Params.Director }} </li>
-				<li>Fecha de estreno: {{ .Params.Estreno }} </li>
-				<li>Recaudacion: {{ .Params.Recaudacion }}</li>
-				</ul>
-		  </p>
-		 
-		{{- .Content }}		
-	  </article>
-	  <div class = 'post_extra'>
-		  {{- partial "copy" . }}
-		</div>
-		{{- partial "author" . }}
-	  {{- if .Site.Params.Staticman }}
-		{{- partial "comments" . }}
-	  {{- end }}
-	  <aside>
-		{{- partial "aside" . }}
-	  </aside>
+		 <article class='post_content'>
+		 <p style="text-align: center;">
+			  <br>
+				Movie details:
+					<ul>
+					<li>Name: {{ .Title }} </li>
+					<li>Director: {{ .Params.Director }} </li>
+					<li>Fecha de estreno: {{ .Params.Estreno }} </li>
+					<li>Recaudacion: {{ .Params.Recaudacion }}</li>
+					</ul>
+		</p>	 
+			{{- .Content }}		
+		  </article>
+		  <div class = 'post_extra'>
+			  {{- partial "copy" . }}
+		  </div>
+			{{- partial "author" . }}
+		  {{- if .Site.Params.Staticman }}
+			{{- partial "comments" . }}
+		  {{- end }}
+		  <aside>
+			{{- partial "aside" . }}
+		  </aside>
 	</div>	
 {{- end }}
 <script src = '{{ absURL "js/autosize.min.js" }}'></script>
